@@ -28,10 +28,10 @@ alex-contribution-flow 스킬을 이 Slack 에이전트가 사용하는 Hermes �
 지금은 설치만 하고 코드 변경이나 PR 생성은 하지 마.
 ```
 
-직접 설치하려면 **Alex가 실행되는 환경·프로필에서**:
+직접 설치하려면 **Alex가 실행되는 환경·프로필에서** 고정된 첫 버전을 사용하세요:
 
 ```bash
-hermes skills install https://raw.githubusercontent.com/joonseong11/hermes-contribution-flow/main/SKILL.md
+hermes skills install https://raw.githubusercontent.com/joonseong11/hermes-contribution-flow/v0.1.0/SKILL.md
 ```
 
 Hermes의 설치 검사나 확인 요청이 나오면 내용을 확인해 진행하세요. 검사를 우회하는 옵션은 필요하지 않습니다. 명령을 지원하지 않는 버전이면 `hermes skills install --help`와 아래 공식 문서를 확인하세요.
@@ -85,3 +85,11 @@ Hermes 명령 입력을 지원하는 환경에서는 `/alex-contribution-flow �
 - [Hermes 서브에이전트](https://hermes-agent.nousresearch.com/docs/user-guide/features/delegation/)
 
 이 스킬은 `feature-flow`에서 논의한 원칙을 비개발자용으로 구성한 독립 배포본입니다. 다른 로컬 스킬 설치는 필요 없습니다.
+
+## 버전 관리
+
+- 첫 릴리스: **[v0.1.0](https://github.com/joonseong11/hermes-contribution-flow/releases/tag/v0.1.0)**. 지금까지의 개선을 묶은 기준 버전이며, 기존 Git 이력은 유지합니다.
+- `main`은 최신 변경, 버전 태그는 배포 시점의 고정 파일입니다. 최신 개발본을 원할 때만 설치 URL의 `v0.1.0`을 `main`으로 바꾸세요.
+- 변경 내역은 [CHANGELOG.md](CHANGELOG.md)에 기록합니다. 스킬 검증 → 변경 이력 갱신 → 커밋·푸시 → 태그·릴리스 순서로 관리합니다.
+- 문구·오류 수정은 patch, 호환되는 개선은 minor로 구분합니다. 기존 사용 방식이 달라지는 변경은 릴리스에 명시하고 버전을 결정합니다.
+- 설치된 Alex 스킬은 저장소 릴리스와 자동 동기화되지 않습니다. 업데이트할 버전을 지정하고, 로컬 수정과 비교한 뒤 설치된 내용을 다시 확인하세요.
